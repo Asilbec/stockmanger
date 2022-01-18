@@ -22,7 +22,7 @@
 .contcont {
   width: 1000px;
   margin: auto;
-  max-width: 100vw;
+  max-width: 97vw;
 }
 
 .addSectionCont input {
@@ -117,4 +117,6 @@
   border-radius: 3px;
   box-sizing: border-box;
   padding: 5px;
+  margin-left: 0;
+  width: fit-content;
 }

@@ -245,9 +245,9 @@ function Resultscard(props) {
   });
 
   return (
-    <motion.div whileHover={{ scale: 1.09, boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' }} onClick={() => { movetopage() }} layout className='resultsCard'>
-      <motion.h1 animate={{ fontSize: '30px' }}>{props.name}</motion.h1>
-      <motion.h1 animate={{ fontSize: '20px' }}>{props.symbol}</motion.h1>
+    <motion.div animate={{ opacity: 1 }} whileHover={{ scale: 1.09, boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' }} onClick={() => { movetopage() }} layout className='resultsCard'>
+      <motion.h1 style={{ fontSize: '20px' }} >{props.name}</motion.h1>
+      <motion.h1 style={{ fontSize: '20px' }}>{props.symbol}</motion.h1>
       <motion.div className='TypeStock'>
         <motion.h1>{props.type}</motion.h1>
         <motion.h1>{stockprice}</motion.h1>

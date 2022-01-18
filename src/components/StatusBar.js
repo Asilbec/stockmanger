@@ -13,7 +13,7 @@ function StatusBar(props) {
             document.getElementById('sendtoserverButton').style.pointerEvents = 'none'
             if (change === false) {
                 newChange(true)
-                axios.post('https://glacial-fortress-97136.herokuapp.com/users/users/addtolist', {
+                axios.post('https://glacial-fortress-97136.herokuapp.com/users/addtolist', {
                     userid: localStorage.getItem('userid'),
                     stocktoadd: props.stock
                 })
@@ -22,7 +22,7 @@ function StatusBar(props) {
                 newIdk('added')
                 setTimeout(() => {
                     newUpdate(false)
-                }, 1500)
+                }, 800)
             } if (change === true) {
                 newChange(false)
                 axios.post('https://glacial-fortress-97136.herokuapp.com/users/deletefromlist', {
@@ -33,9 +33,9 @@ function StatusBar(props) {
                 newIdk('deleted')
                 setTimeout(() => {
                     newUpdate(false)
-                }, 1500)
+                }, 800)
             }
-        }, 1000);
+        }, 300);
     }
 
     useEffect(() => {
