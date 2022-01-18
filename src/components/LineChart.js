@@ -61,7 +61,10 @@ function LineChart(props) {
         elements: {
             point: {
                 radius: style,
-                pointStyle: 'crossRot'
+                pointStyle: 'rectRot',
+                borderColor: '#808080',
+                backgroundColor: '#808080',
+                borderWidth: 1
             },
             line: {
                 tension: 0.5
@@ -135,7 +138,7 @@ function LineChart(props) {
 
     if (vis === true) {
         return (
-            <motion.div animate={{ height: 'fit-content', opacity: 1 }} className='lineChart'>
+            <motion.div animate={{ opacity: 1, height: 'fit-content' }} className='lineChart'>
                 <Line className='chart' options={options} data={data} />
             </motion.div>
         )

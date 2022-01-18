@@ -4,13 +4,14 @@
   min-height: 600px;
   max-width: 99vw;
   margin: auto;
-  background-color: white;
+  background-color: rgb(59, 59, 59);
   box-sizing: border-box;
   padding: 15px;
   font-family: "Abel", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  color: white;
 }
 
 .settingSection {

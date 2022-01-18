@@ -67,8 +67,8 @@
 }
 
 .chart {
-  height: 200px;
+  height: fit-content;
   width: 95%;
-  max-width: 95vw;
+  max-width: 99vw;
   margin: auto;
 }

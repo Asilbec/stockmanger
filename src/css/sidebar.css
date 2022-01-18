@@ -18,6 +18,8 @@
   position: fixed;
   background-color: rgb(40, 40, 43);
   z-index: 99;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #menuIcon {

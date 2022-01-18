@@ -6,7 +6,7 @@
   color: rgb(187, 187, 187);
   font-family: "Abel", sans-serif;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 3vh;
   padding-bottom: 100px;
 }
 
@@ -17,7 +17,7 @@
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
-  padding: 0px;
+  padding: 7px;
 }
 
 .basicinfoContinuted {
@@ -58,8 +58,14 @@
   box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
+  position: fixed;
 }
 
 .choiseButton {
   width: 0px;
+}
+@media only screen and (max-width: 600px) {
+  .stockPage {
+    margin-top: 100px;
+  }
 }

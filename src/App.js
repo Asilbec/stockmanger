@@ -121,13 +121,13 @@ function Card(props) {
 
   return (
     <motion.div animate={{ opacity: 1 }} whileHover={{ scale: 1.03, boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' }} onClick={() => handleClick()} className='Card'>
-      <motion.h1 animate={{ fontSize: '40px' }}>{name}</motion.h1>
-      <motion.h1 animate={{ fontSize: '70px' }}>{info.price}</motion.h1>
-      <motion.h1 animate={{ fontSize: '30px' }}>{(info.changesPercentage).toFixed(2)}%</motion.h1>
-      <motion.h1 animate={{ fontSize: '20px' }}>Time : {convert(info.timestamp)}</motion.h1>
+      <motion.h1 style={{ fontSize: '40px' }}>{name}</motion.h1>
+      <motion.h1 style={{ fontSize: '60px' }}>{info.price}</motion.h1>
+      <motion.h1 style={{ fontSize: '30px' }}>{(info.changesPercentage).toFixed(2)}%</motion.h1>
+      <motion.h1 style={{ fontSize: '20px' }}>Time : {convert(info.timestamp)}</motion.h1>
       <motion.div className='CardLowandHigh'>
-        <motion.h1 animate={{ fontSize: '20px' }}>High : {(info.dayHigh).toFixed(2)}</motion.h1>
-        <motion.h1 animate={{ fontSize: '20px' }}>Low : {(info.dayLow).toFixed(2)}</motion.h1>
+        <motion.h1 style={{ fontSize: '20px' }}>High : {(info.dayHigh).toFixed(2)}</motion.h1>
+        <motion.h1 style={{ fontSize: '20px' }}>Low : {(info.dayLow).toFixed(2)}</motion.h1>
       </motion.div>
       <LineChart color={returnColor(info.changesPercentage)} type={'preview'} change={info.changesPercentage} stock={name} />
     </motion.div>
@@ -149,7 +149,7 @@ function Dashboard() {
   return (
     <motion.div className='dashBoard'>
       <motion.div animate={{ opacity: 1 }} className='dashboardWelcome'>
-        <motion.h1 id='welcomeText' animate={{ fontSize: '50px' }}>Hello {snap.username}</motion.h1>
+        <motion.h1 id='welcomeText' animate={{ fontSize: '80px' }}>Hello {snap.username}</motion.h1>
       </motion.div>
       <motion.div className='stocksMap'>
         {name.map((nice, index) => (
@@ -306,6 +306,8 @@ function StockPage() {
 
 function Setting() {
 
+  let navigate = useNavigate()
+
   const [testsettings, newtest] = useState({
 
     _id: "61e3c542229299f9ff03776c",
@@ -343,6 +345,11 @@ function Setting() {
     },
   }
 
+  function logOut() {
+    localStorage.clear()
+    navigate('/login')
+  }
+
   return (
     <motion.div initial="initial"
       animate="in"
@@ -359,6 +366,9 @@ function Setting() {
       <motion.div className='settingSection'>
         <motion.h1 animate={{ opacity: 1 }}>Customer ID</motion.h1>
         <motion.h1 animate={{ opacity: 1 }}>{testsettings._id}</motion.h1>
+      </motion.div>
+      <motion.div className='settingSection'>
+        <motion.button onClick={() => logOut()}>Log Out</motion.button>
       </motion.div>
     </motion.div>
   )
@@ -418,8 +428,6 @@ function App() {
             <motion.p onClick={() => setIsOpen(isOpen => !isOpen)} whileHover={{ x: '30px' }}>
               <Link to="setting">Settings</Link>
             </motion.p>
-            <motion.p whileHover={{ x: '30px' }}>Settings</motion.p>
-            <motion.p whileHover={{ x: '30px' }}>Feedback</motion.p>
           </motion.div>
         </motion.div>
         <AnimatePresence>
