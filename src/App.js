@@ -412,7 +412,7 @@ function App() {
   return (
     <div className="App">
       <Store>
-        <motion.button className='MenuButton' variants={sidebarButtonAnimation} animate={isOpen ? "open" : "closed"} initial="visible" onClick={() => setIsOpen(isOpen => !isOpen)}><img id='menuIcon' alt='nice' src='https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png'></img></motion.button>
+        <motion.button className='MenuButton' variants={sidebarButtonAnimation} animate={isOpen ? "open" : "closed"} initial="visible" onClick={() => setIsOpen(isOpen => !isOpen)}><img id='menuIcon' alt='Search' src='https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png'></img></motion.button>
         <motion.div variants={sidebarAnimation} animate={isOpen ? "open" : "closed"} className='sidebar'>
           <motion.h1 id='menubartitleText'>Bek Tracker</motion.h1>
           <motion.div className='sidebarContent'>
@@ -423,7 +423,7 @@ function App() {
               <Link to="">Dashboard</Link>
             </motion.p>
             <motion.p onClick={() => setIsOpen(isOpen => !isOpen)} whileHover={{ x: '30px' }}>
-              <Link to="add">Add</Link>
+              <Link to="search">Add</Link>
             </motion.p>
             <motion.p onClick={() => setIsOpen(isOpen => !isOpen)} whileHover={{ x: '30px' }}>
               <Link to="setting">Settings</Link>
