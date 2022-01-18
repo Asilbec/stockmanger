@@ -123,7 +123,7 @@ function Card(props) {
     <motion.div animate={{ opacity: 1 }} whileHover={{ scale: 1.03, boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' }} onClick={() => handleClick()} className='Card'>
       <motion.h1 style={{ fontSize: '40px' }}>{name}</motion.h1>
       <motion.h1 style={{ fontSize: '60px' }}>{info.price}</motion.h1>
-      <motion.h1 style={{ fontSize: '30px' }}>{(info.changesPercentage).toFixed(2)}%</motion.h1>
+      <motion.h1 animate={{ color: returnColor(info.changesPercentage) }} style={{ fontSize: '30px' }}>{(info.changesPercentage).toFixed(2)}%</motion.h1>
       <motion.h1 style={{ fontSize: '20px' }}>Time : {convert(info.timestamp)}</motion.h1>
       <motion.div className='CardLowandHigh'>
         <motion.h1 style={{ fontSize: '20px' }}>High : {(info.dayHigh).toFixed(2)}</motion.h1>
