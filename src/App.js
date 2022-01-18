@@ -25,7 +25,7 @@ function Login() {
   function trytolog() {
     const users = document.getElementById('username').value
     const pass = document.getElementById('password').value
-    axios.post('http://localhost:9000/users/searchUsername/', {
+    axios.post('https://glacial-fortress-97136.herokuapp.com/users/searchUsername/', {
       user: users,
       password: pass
     }).then((results) => {
@@ -139,7 +139,7 @@ function Dashboard() {
   const snap = useSnapshot(state)
   const [name, newName] = useState([])
   useEffect(() => {
-    axios.post('http://localhost:9000/users/UsernameList', {
+    axios.post('https://glacial-fortress-97136.herokuapp.com/users/UsernameList', {
       id: localStorage.getItem('userid')
     }).then(function (res) {
       newName(res.data.list)
@@ -321,7 +321,7 @@ function Setting() {
   })
 
   useEffect(() => {
-    axios.post('http://localhost:9000/users/UsernameList', {
+    axios.post('https://glacial-fortress-97136.herokuapp.com/users/UsernameList', {
       id: localStorage.getItem('userid')
     }).then(function (res) {
       console.log(res.data)
