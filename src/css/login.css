@@ -1,0 +1,67 @@
+.loginCon {
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: rgb(40, 40, 43);
+  margin: auto;
+  margin-left: 0;
+  display: flex;
+  font-family: "Roboto Mono", monospace;
+  opacity: 0;
+}
+
+.loginInputCont {
+  width: 95%;
+  max-width: 350px;
+  height: 400px;
+  background-color: rgba(253, 251, 249, 0.048);
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 5px;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+    0 32px 16px rgba(0, 0, 0, 0.09);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.input {
+  width: 90%;
+  height: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 30px;
+  gap: 10px;
+}
+
+.input input {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto Mono", monospace;
+}
+
+#submitLoginInfo {
+  width: 100px;
+  height: 40px;
+  margin: auto;
+  margin-right: 5%;
+  background-color: green;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  color: white;
+}

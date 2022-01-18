@@ -1,0 +1,27 @@
+.settingCard {
+  width: 900px;
+  height: fit-content;
+  min-height: 600px;
+  max-width: 99vw;
+  margin: auto;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 15px;
+  font-family: "Abel", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.settingSection {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.settingSection h1 {
+  font-size: 1.3rem;
+  opacity: 0;
+}

@@ -1,0 +1,65 @@
+.stockPage {
+  width: 1100px;
+  height: fit-content;
+  min-height: 400px;
+  max-width: 99%;
+  color: rgb(187, 187, 187);
+  font-family: "Abel", sans-serif;
+  margin: auto;
+  margin-top: 150px;
+  padding-bottom: 100px;
+}
+
+.basicinfo {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+.basicinfoContinuted {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 0px;
+  margin-bottom: 10px;
+}
+
+.returnfalseStockpage {
+  margin: auto;
+  opacity: 0;
+}
+#addButton {
+  position: absolute;
+  right: 5px;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+#sendtoserverButton {
+  width: 100px;
+  height: 40px;
+  font-family: "Abel", sans-serif;
+  font-size: 24px;
+  outline: none;
+  border: none;
+  background-color: green;
+  border-radius: 40px;
+  color: white;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+}
+
+.choiseButton {
+  width: 0px;
+}
