@@ -297,7 +297,7 @@ function StockPage() {
     return (
       <motion.div transition={{ delay: 0.4 }} className='returnfalseStockpage' animate={{ opacity: 1 }}>
         <h1>Sorry We dont support this stock as of right now</h1>
-        <motion.button onClick={() => navigate('/add')} animate={{ width: '150px', height: '40px', margin: 'auto' }}>Back</motion.button>
+        <motion.button onClick={() => navigate('/search')} animate={{ width: '150px', height: '40px', margin: 'auto' }}>Back</motion.button>
       </motion.div>
     )
   }
@@ -433,7 +433,7 @@ function App() {
         <AnimatePresence>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/add" element={<AddStock />} />
+            <Route path="/search" element={<AddStock />} />
             <Route path="/" element={<Dashboard />} />
             <Route path="/stock" element={<StockPage />} />
             <Route path="/setting" element={<Setting />} />
