@@ -17,6 +17,7 @@ import { proxy, useSnapshot } from 'valtio'
 import StatusBar from './components/StatusBar';
 import { AnimatePresence } from 'framer-motion';
 import LineChart from './components/LineChart';
+import burger from './pictures/burger.png'
 const state = proxy({ count: 'TSLA', username: '' })
 
 
@@ -412,7 +413,7 @@ function App() {
   return (
     <div className="App">
       <Store>
-        <motion.button className='MenuButton' variants={sidebarButtonAnimation} animate={isOpen ? "open" : "closed"} initial="visible" onClick={() => setIsOpen(isOpen => !isOpen)}><img id='menuIcon' alt='Search' src='https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png'></img></motion.button>
+        <motion.button className='MenuButton' variants={sidebarButtonAnimation} animate={isOpen ? "open" : "closed"} initial="visible" onClick={() => setIsOpen(isOpen => !isOpen)}><img id='menuIcon' alt='Search' src={burger}></img></motion.button>
         <motion.div variants={sidebarAnimation} animate={isOpen ? "open" : "closed"} className='sidebar'>
           <motion.h1 id='menubartitleText'>Bek Tracker</motion.h1>
           <motion.div className='sidebarContent'>
