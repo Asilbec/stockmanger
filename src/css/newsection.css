@@ -1,0 +1,78 @@
+.newssection {
+  width: 100%;
+  height: fit-content;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Abel", sans-serif;
+}
+
+.newsectionmap {
+  width: 1400px;
+  height: fit-content;
+  min-height: 400px;
+  max-width: 95vw;
+  margin: auto;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 150px));
+  justify-content: center;
+  grid-gap: 10px;
+  padding-bottom: 100px;
+  margin-top: 30px;
+}
+
+#newsCards h3 {
+  font-size: 14px;
+  width: 98%;
+  min-width: 200px;
+  height: 60px;
+  max-height: 60px;
+  overflow: hidden;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+#newsCards h1 {
+  margin: auto;
+  margin-left: 10px;
+}
+
+#newsCards {
+  opacity: 0;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.imgContclass {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: inherit;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.textImgCont {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  border-radius: inherit;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

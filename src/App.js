@@ -6,6 +6,7 @@ import './css/dashboard.css'
 import './css/add.css'
 import './css/stockpage.css'
 import './css/setting.css'
+import './css/newsection.css'
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
@@ -18,6 +19,7 @@ import StatusBar from './components/StatusBar';
 import { AnimatePresence } from 'framer-motion';
 import LineChart from './components/LineChart';
 import burger from './pictures/burger.png'
+import News from './components/News';
 const state = proxy({ count: 'TSLA', username: '' })
 
 
@@ -424,7 +426,7 @@ function App() {
               <Link to="">Dashboard</Link>
             </motion.p>
             <motion.p onClick={() => setIsOpen(isOpen => !isOpen)} whileHover={{ x: '30px' }}>
-              <Link to="search">Add</Link>
+              <Link to="News">News</Link>
             </motion.p>
             <motion.p onClick={() => setIsOpen(isOpen => !isOpen)} whileHover={{ x: '30px' }}>
               <Link to="setting">Settings</Link>
@@ -438,6 +440,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/stock" element={<StockPage />} />
             <Route path="/setting" element={<Setting />} />
+            <Route path="/News" element={<News />} />
           </Routes>
         </AnimatePresence>
       </Store>
