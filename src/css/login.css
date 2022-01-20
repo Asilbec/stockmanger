@@ -8,6 +8,8 @@
   display: flex;
   font-family: "Roboto Mono", monospace;
   opacity: 0;
+  position: absolute;
+  z-index: 1000;
 }
 
 .loginInputCont {

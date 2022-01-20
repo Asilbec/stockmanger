@@ -35,7 +35,7 @@ function News() {
                                 <h1 id="">{nice.symbol}</h1>
                                 <h3>{nice.text}</h3>
                             </div>
-                            <div style={{ backgroundImage: "url(" + nice.image + ')' }} className="imgContclass">
+                            <div load='lazy' style={{ backgroundImage: "url(" + nice.image + ')' }} className="imgContclass">
                             </div>
                         </motion.a>
                     ))}

@@ -36,9 +36,10 @@ function LineChart(props) {
     useEffect(() => {
 
         if (props.type === 'preview') {
-            axios.get('https://financialmodelingprep.com/api/v3/historical-price-full/' + props.stock + '?serietype=line&timeseries=10&apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
-                for (let x = (results.data.historical).length - 1; 0 <= x; x--) {
-                    const closeprice = results.data.historical[x]
+            axios.get('https://financialmodelingprep.com/api/v3/historical-chart/4hour/' + props.stock + '?serietype=line&timeseries=10&apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
+                console.log(results.data)
+                for (let x = (results.data).length - 1; 0 <= x; x--) {
+                    const closeprice = results.data[x]
                     addData(chartData => [...chartData, closeprice.close]);
                     newlabel(label => [...label, (closeprice.date)]);
                     newStyle(1)
@@ -46,9 +47,9 @@ function LineChart(props) {
                 }
             })
         } else {
-            axios.get('https://financialmodelingprep.com/api/v3/historical-price-full/' + props.stock + '?serietype=line&timeseries=150&apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
-                for (let x = (results.data.historical).length - 1; 0 <= x; x--) {
-                    const closeprice = results.data.historical[x]
+            axios.get('https://financialmodelingprep.com/api/v3/historical-chart/1hour/' + props.stock + '?serietype=line&timeseries=10&apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
+                for (let x = (results.data).length - 1; 0 <= x; x--) {
+                    const closeprice = results.data[x]
                     addData(chartData => [...chartData, closeprice.close]);
                     newlabel(label => [...label, (closeprice.date)]);
                     newStyle(4)

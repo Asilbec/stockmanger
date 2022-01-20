@@ -20,7 +20,7 @@ import { AnimatePresence } from 'framer-motion';
 import LineChart from './components/LineChart';
 import burger from './pictures/burger.png'
 import News from './components/News';
-const state = proxy({ count: 'TSLA', username: '' })
+const state = proxy({ count: 'TSLA', username: '', states: true })
 
 
 function Login() {
@@ -310,7 +310,6 @@ function StockPage() {
 function Setting() {
 
   let navigate = useNavigate()
-
   const [testsettings, newtest] = useState({
 
     _id: "61e3c542229299f9ff03776c",
@@ -407,6 +406,7 @@ function App() {
       }
     }
   }
+
   useEffect(() => {
     if ((localStorage.getItem('userid')) === null || (localStorage.getItem('userid')) === undefined) {
       navigate('/login')
