@@ -32,14 +32,12 @@ function Login() {
       user: users,
       password: pass
     }).then((results) => {
-      console.log(results.data)
       localStorage.setItem("userid", results.data._id);
       navigate('/');
     })
   }
   useEffect(() => {
     if ((localStorage.getItem('userid')) === null || (localStorage.getItem('userid')) === undefined) {
-      console.log('loginJit')
     } else {
       navigate('/')
     }
@@ -93,13 +91,11 @@ function Card(props) {
   )
   useEffect(() => {
     axios.get('https://financialmodelingprep.com/api/v3/quote/' + name + '?apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
-      console.log(results.data[0])
       newInfo(results.data[0])
     })
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleClick() {
-    console.log('updated')
     state.count = name
     navigate('/stock')
   };
@@ -187,13 +183,13 @@ function AddStock() {
     const searchid = document.getElementById('searchSymboleInput').value
     if (searchid.length >= 3) {
       axios.get('https://financialmodelingprep.com/api/v3/search?query=' + searchid + '&limit=10&apikey=9cbd888276f170c52ac74137377dd93f').then(function (response) {
-        console.log(response.data);
         newSearchResults(response.data)
       }).catch(function (error) {
         console.error(error);
       });
     }
   }
+
   return (
     <motion.div className='AddSectionOuterCont'>
       <div className='contcont'>
@@ -240,7 +236,6 @@ function Resultscard(props) {
     state.count = props.symbol
     navigate('/stock')
   }
-
   useEffect(() => {
     axios.get('https://financialmodelingprep.com/api/v3/quote-short/' + props.symbol + '?apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
       newprice(results.data[0].price)
@@ -267,7 +262,6 @@ function StockPage() {
   const [vis, newvis] = useState(false)
   useEffect(() => {
     axios.get('https://financialmodelingprep.com/api/v3/profile/' + snap.count + '?apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
-      console.log(results.data[0])
       newbasic(results.data[0])
       if (results.data[0] === undefined) {
         newvis(false)
@@ -275,7 +269,7 @@ function StockPage() {
         newvis(true)
       }
     })
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, snap.stock); // eslint-disable-line react-hooks/exhaustive-deps
   if (vis === true) {
     return (
       <motion.div animate={{ opacity: 1 }} className='stockPage'>
@@ -293,6 +287,9 @@ function StockPage() {
           </motion.div>
         </motion.div>
         <LineChart color={'#00FF00'} stock={snap.count} />
+        <motion.div className='SimilarCompanies'>
+          <Sim peer={snap.count} />
+        </motion.div>
       </motion.div>
     )
   }
@@ -304,11 +301,44 @@ function StockPage() {
       </motion.div>
     )
   }
-
 }
 
-function Setting() {
 
+function Sim(props) {
+  const [data, newData] = useState(['TSLA'])
+  useEffect(() => {
+    axios.get('https://financialmodelingprep.com/api/v4/stock_peers?symbol=' + props.peer + '&apikey=9cbd888276f170c52ac74137377dd93f').then(function (results) {
+      console.log(results.data[0].peersList)
+      newData(results.data[0].peersList)
+    })
+  }, []);
+  return (
+    <div className='SimilarCont'>
+      {data.map((nice, index) => (
+        <SimilarCard stock={nice} key={index} />
+      ))}
+    </div>
+  )
+}
+
+
+function SimilarCard(props) {
+  const snap = useSnapshot(state)
+  let navigate = useNavigate();
+  function movetopage() {
+    state.count = props.stock
+    navigate('/stock')
+  }
+  return (
+    <div onClick={() => movetopage()} className='similarCard'>
+      {props.stock}
+    </div>
+  )
+}
+
+
+
+function Setting() {
   let navigate = useNavigate()
   const [testsettings, newtest] = useState({
 
@@ -328,7 +358,6 @@ function Setting() {
     axios.post('https://glacial-fortress-97136.herokuapp.com/users/UsernameList', {
       id: localStorage.getItem('userid')
     }).then(function (res) {
-      console.log(res.data)
       newtest(res.data)
     })
   }, []);
